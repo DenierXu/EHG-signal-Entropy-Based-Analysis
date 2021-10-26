@@ -35,7 +35,7 @@ from sklearn.model_selection import KFold
 '''
 
 #100次5折交叉验证
-N = 1
+N = 100
 # 一次STFT的窗口大小
 windowSize = 200
 #Hz, raw signal sample frequency
@@ -229,11 +229,8 @@ ac = []
 se = []
 sp = []
 au = []
-
-
-#SampEn:6,4    ApEn:6,6
-
-C = 5   #表示实验进行的总次数
+#表示实验使用5折交叉验证
+C = 5   
 
 for h in range(n_components):
     X = data.drop(data.columns[[0, N_features - 1]], axis=1)
